@@ -20,8 +20,10 @@
     <title>CGIP Registration Form</title>
     <link href="cg_base.css" rel="stylesheet" />
     <link href="cg_styles.css" rel="stylesheet" />
+    <!-- Adds in the style sheet for the forms and the validation. -->
     <link rel="stylesheet" href="cg_forms.css" />
     <link rel="stylesheet" href="cg_validate.css" />
+    <!-- Adds in the script for the submit button. -->
     <script src="cg_script.js"></script>
 </head>
 
@@ -55,10 +57,15 @@
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
 
+        <!-- The form with the action of example.com/cg/register and a method of post. -->
         <form action="http://www.example.com/cg/register" method="POST">
+            <!-- The label for the Title data list. -->
             <label for="titleBox">Title</label>
+            <!-- The input text box. -->
             <input type="text" name="title" id="titleBox" list="titlelist" />
+            <!-- The data list that goes with the text box. -->
             <datalist name="titleList" id="titlelist">
+                <!-- The values that make up the data list. -->
                 <option value="Mr." />
                 <option value="Mrs." />
                 <option value="Ms." />
@@ -67,28 +74,49 @@
                 <option value="Assist." />
             </datalist>
 
-            <label for="fnbox">First Name*</label>
+            <!-- The first name lable -->
+            <label for="fnBox">First Name*</label>
+            <!-- The inputbox for the first name. It is required. -->
             <input type="text" name="firstName" id="fnBox" required>
 
             <label for="lnBox">Last Name*</label>
             <input type="text" name="lastName" id="lnBox" required>
 
             <label for="addBox">Address*</label>
-            <input type="text" name="address" id="addBox" required>
+            <!-- A text area for the address. The text area is required. -->
+            <textarea name="address" id="addBox" required> </textarea>
 
             <label for="groupBox">Company or University</label>
             <input type="text" name="group" id="groupBox">
 
             <label for="mailBox">E-mail*</label>
+            <!-- An email input box. The email is for browser verification. -->
             <input type="email" name="email" id="mailBox" required>
 
-            <label for="phoneNumber">Phone Number*</label>
+            <label for="phoneBox">Phone Number*</label>
+            <!-- A telephone type input box. It contains a placeholder informing the user of the pattern. The pattern in the accepted text. -->
             <input type="tel" name="phoneNumber" id="phoneBox" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                 required>
 
             <label for="idBox">ACGIP Membership Number</label>
+            <!-- An input box also containing a placeholder and pattern. -->
             <input type="text" name="acgipID" id="idBox" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$">
-            <!-- Stopped on step 7 -->
+
+            <label for="regList">Registration Category</label>
+            <!-- A selection list. -->
+            <select id="regList" name="registertype">
+                <!-- The values of that selection list. -->
+                <option value="member">ACGIP Member ($695)</option>
+                <option value="nonmember">Non-Member ($795)</option>
+                <option value="student">Student ($310)</option>
+                <option value="poster">Poster ($95)</option>
+                <option value="guest">Guest ($35)</option>
+            </select>
+
+            <p>
+                <!-- The submit button. -->
+                <input type="submit" value="continue" />
+            </p>
 
         </form>
 

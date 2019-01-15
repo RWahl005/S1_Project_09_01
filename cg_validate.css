@@ -13,3 +13,31 @@
 
 
 /* Validation Styles */
+/* When the input, select, and textarea are currently selected by the user the background changes to yellow. */
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: rgb(245, 245, 140);
+}
+
+/* If the first name box, last name box, address box, mailbox, phone box, and id box are currently selected and valid */
+input#fnBox:focus:valid,
+input#lnBox:focus:valid,
+textarea#addBox:focus:valid,
+input#mailBox:focus:valid,
+input#phoneBox:focus:valid,
+input#idBox:focus:valid {
+    /* Sets the background to light green and adds a checkmark image to the right of the box. The image does not repeat. */
+    background: rgb(220, 255, 220) url("cg_valid.png") right no-repeat;
+}
+
+/* If the first name box, last name box, address box, mailbox, phone box, and id box are currently selected and valid */
+input#fnBox:focus:invalid,
+input#lnBox:focus:invalid,
+textarea#addBox:focus:invalid,
+input#mailBox:focus:invalid,
+input#phoneBox:focus:invalid,
+input#idBox:focus:invalid {
+    /* Sets the background to light red and adds a warning image to the right of the box. The image does not repeat. */
+    background: rgb(255, 232, 232) url("cg_invalid.png") right no-repeat;
+}
